@@ -1,0 +1,4 @@
+@INCLUDE        = ../doxygen/doxygen.conf
+PROJECT_NAME    = "MP3"
+PROJECT_BRIEF   = "Linked Lists"
+EXTRACT_PRIVATE = YES
