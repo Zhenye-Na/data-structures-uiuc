@@ -1,0 +1,4 @@
+@INCLUDE        = ../../doxygen/doxygen.conf
+PROJECT_NAME    = "lab_memory"
+PROJECT_BRIEF   = "Malevolent Memories"
+EXTRACT_PRIVATE = YES
