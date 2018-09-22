@@ -1,0 +1,12 @@
+Finding chars in lab_hash_data/aliceinwonderland.txt with frequency >= 5000 using LPHashTable...
+15390	e
+12197	t
+9800	a
+9478	o
+8632	i
+8051	n
+7888	h
+7266	s
+6609	r
+5466	d
+5210	l

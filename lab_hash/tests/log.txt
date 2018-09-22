@@ -1,0 +1,8 @@
+[alex]:	/product/3/	Sat Apr  9 07:56:24 2011
+[chase]:	/product/5/	Sun Apr 10 09:39:34 2011
+[alex]:	/product/2/	Thu Apr  7 08:17:02 2011
+[alex]:	/product/3/	Fri Apr  8 08:52:28 2011
+[dave]:	/product/2/	Fri Apr  8 07:55:14 2011
+[dave]:	/product/2/	Sat Apr  9 08:19:33 2011
+[jack]:	/product/3/	Sat Apr  9 10:27:37 2011
+[cinda]:	/product/4/	Fri Apr  8 08:55:03 2011

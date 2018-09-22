@@ -1,0 +1,10 @@
+Finding chars in data/art_of_war.txt with frequency >= 10000 using LPHashTable...
+30428	e
+24036	t
+19541	a
+18759	n
+18648	i
+18437	o
+16969	s
+14689	h
+14477	r

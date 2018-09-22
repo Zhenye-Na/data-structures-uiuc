@@ -1,0 +1,14 @@
+Finding words in lab_hash_data/war-and-peace.txt with frequency >= 5000 using LPHashTable...
+34558	the
+22143	and
+16707	to
+14988	of
+10514	a
+9808	he
+8926	in
+7965	his
+7805	that
+7326	was
+5694	with
+5354	had
+5179	it

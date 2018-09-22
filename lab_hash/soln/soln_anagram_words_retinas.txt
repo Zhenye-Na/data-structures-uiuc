@@ -1,0 +1,15 @@
+Checking file lab_hash_data/words.txt for anagrams of retinas using LPHashTable...
+anestri is an anagram of retinas
+asterin is an anagram of retinas
+eranist is an anagram of retinas
+nastier is an anagram of retinas
+ratines is an anagram of retinas
+resiant is an anagram of retinas
+restain is an anagram of retinas
+retains is an anagram of retinas
+retinas is an anagram of retinas
+retsina is an anagram of retinas
+sainter is an anagram of retinas
+stainer is an anagram of retinas
+starnie is an anagram of retinas
+stearin is an anagram of retinas

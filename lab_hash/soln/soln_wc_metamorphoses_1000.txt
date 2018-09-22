@@ -1,0 +1,15 @@
+Finding words in lab_hash_data/metamorphoses.txt with frequency >= 1000 using LPHashTable...
+10473	the
+5753	of
+4739	and
+3078	to
+2246	a
+1989	in
+1706	was
+1572	his
+1548	that
+1500	her
+1456	with
+1306	is
+1241	he
+1185	by

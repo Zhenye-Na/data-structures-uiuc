@@ -1,0 +1,20 @@
+Finding words in lab_hash_data/aliceinwonderland.txt with frequency >= 200 using LPHashTable...
+1804	the
+912	and
+801	to
+684	a
+625	of
+541	it
+538	she
+462	said
+429	you
+428	in
+400	i
+385	alice
+358	was
+291	that
+272	as
+248	her
+227	with
+224	at
+204	on
