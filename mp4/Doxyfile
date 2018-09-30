@@ -1,0 +1,4 @@
+@INCLUDE        = /home/haosun/Documents/CS225/assignments/doxygen/doxygen.conf
+PROJECT_NAME    = "MP4"
+PROJECT_BRIEF   = "DFS and BFS using Stacks and Queues"
+EXTRACT_PRIVATE = YES
