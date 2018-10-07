@@ -1,0 +1,4 @@
+@INCLUDE        = ../doxygen/doxygen.conf
+PROJECT_NAME    = "lab_avl"
+PROJECT_BRIEF   = "AVL Apocalypse"
+EXTRACT_PRIVATE = YES
