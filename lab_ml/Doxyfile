@@ -1,0 +1,4 @@
+@INCLUDE        = ../doxygen/doxygen.conf
+PROJECT_NAME    = "lab_heaps"
+PROJECT_BRIEF   = "Precarious Priority Queues"
+EXTRACT_PRIVATE = YES
