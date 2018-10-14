@@ -1,0 +1,5 @@
+man
+scent
+cent
+sent
+buffer

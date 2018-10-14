@@ -1,0 +1,127 @@
+"That's legit as shit." ~ Rick Barber
+"The cheating sheet is key to success in CS 412 course." ~ CS 412 TA
+"Your job is not just what you're doing; it should be preparing you for what you want to do." ~ Michael Lopp
+"One day I will shoot you with this bullet. Can you still say that you love me?" ~ Re-l Mayer
+"I didn't say I wanted to die in a blender! I said I wanted to be in a blender!" ~ Kyle Johnson
+"It is practically impossible to teach good programming to students that have had a prior exposure to BASIC: as potential programmers they are mentally mutilated beyond hope of regeneration." ~ Edsger Dijkstra
+"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability." ~ John Woods
+"The primary purpose of the DATA statement is to give names to constants; instead of referring to pi as 3.141592653589793 at every appearance, the variable PI can be given that value with a DATA statement and used instead of the longer form of the constant. This also simplifies modifying the program, should the value of pi change." ~ FORTRAN manual for Xerox computers
+"Any sufficiently advanced bug is indistinguishable from a feature." ~ Rich Kulawiec
+"Worry loudly now or scream louder later." ~ Michael Lopp
+"If you think you can do it all, you're thinking too small." ~ Michael Lopp
+"When you say 'You suck', I think 'I win'." ~ Michael Lopp
+"Honestly, if you don't fit in, then you're probably doing the right thing." ~ LIGHTS
+"Simplicity and elegance are unpopular because they require hard work and discipline to achieve and education to be appreciated." ~ Edsger Dijkstra
+"I love deadlines. I like the whooshing sound they make as they fly by." ~ Douglas Adams
+"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it." ~ Brian Kernighan
+"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time." ~ Tom Cargill
+"It always takes longer than you expect, even when you take into account Hofstadter's Law." ~ Hofstadter's Law
+"The most likely way for the world to be destroyed, most experts agree, is by accident. That's where we come in; we're computer professionals. We cause accidents." ~ Nathaniel Borenstein
+"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away." ~ Antoine de Saint-Exupery
+"Even if by chance this world should end tomorrow, if it's together with you, would 'I'm okay with that too' be the cool attitude you'd take?" ~ Makino Yui
+"I just don't trust easily, and for good reasons... which are my own." ~ Carth Onasi
+"You think the sky is like a big big plate." ~ Prof. Jiawei Han
+"You look at their elbows, they actually have many good theoretical elbows." ~ Prof. Jiawei Han
+"If you don't hand in the next homework, you might miss some points." ~ Prof. Jiawei Han
+"I would build pyramids, if I were Pharoah." ~ Kyle Johnson
+"Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves." ~ Alan Kay
+"Microsoft has a new version out, Windows XP, which according to everybody is the 'most reliable Windows ever.' To me, this is like saying that asparagus is 'the most articulate vegetable ever.'" ~ Dave Barry
+"The most amazing achievement of the computer software industry is its continuing cancellation of the steady and staggering gains made by the computer hardware industry." ~ Henry Petroski
+"There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies." ~ C.A.R. Hoare
+"There's an old story about the person who wished his computer were as easy to use as his telephone. That wish has come true, since I no longer know how to use my telephone." ~ Bjarne Stroustrup
+"The trouble with programmers is that you can never tell what a programmer is doing until it's too late." ~ Seymour Cray
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
+"First, solve the problem. Then, write the code." ~ John Johnson
+"Optimism is an occupational hazard of programming; feedback is the treatment." ~ Kent Beck
+"To iterate is human, to recurse divine." ~ L. Peter Deutsch
+"Should array indices start at 0 or 1? My compromise of 0.5 was rejected without, I thought, proper consideration." ~ Stan Kelly-Bootle
+"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
+"C++ : Where friends have access to your private members." ~ Gavin Russell Baker
+"Java is, in many ways, C++-." ~ Michael Feldman
+"If debugging is the process of removing bugs, then programming must be the process of putting them in." ~ Edsger W. Dijkstra
+"A computer lets you make more mistakes faster than any invention in human history–with the possible exceptions of handguns and tequila." ~ Mitch Radcliffe
+"A computer will do what you tell it to do, but that may be much different from what you had in mind" ~ Joseph Weizenbaum
+"Computers are like Old Testament gods; lots of rules and no mercy." ~ Joseph Campbell
+"Programs must be written for people to read, and only incidentally for machines to execute." ~ Abelson and Sussman
+"If you just rely on one model, you tend to amputate reality to make it fit your model." ~ David Brooks
+"Don't worry about people stealing your ideas. If your ideas are any good, you'll have to ram them down people's throats." ~ Howard H. Aiken
+"Eighty percent of success is showing up." ~ Woody Allen
+"If you're not failing every now and again, it's a sign you're not doing anything very innovative." ~ Woody Allen
+"We are what we repeatedly do. Excellence, then, is not an act, but a habit." ~ Aristotle
+"The most exciting phrase to hear in science - the one that heralds new discoveries - is not 'Eureka!' but 'That's funny....'" ~ Isaac Asimov
+"On two occasions, I have been asked [by members of Parliament], 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' I am not able to rightly apprehend the kind of confusion of ideas that could provoke such a question." ~ Charles Babbage
+"The cheapest, fastest, and most reliable components of a computer system are those that aren't there." ~ Gordon Bell
+"More than the act of testing, the act of designing tests is one of the best bug preventers known. The thinking that must be done to create a useful test can discover and eliminate bugs before they are coded - indeed, test-design thinking can discover and eliminate bugs at every stage in the creation of software, from conception to specification, to design, coding and the rest." ~ Boris Bezier
+"We don't have time to stop for gas, we're already late." ~ Mike Cleron
+"I hear and I forget; I see and I remember; I do and I understand." ~ Confucius
+"Doing more things faster is no substitute for doing the right things." ~ Stephen R. Covey
+"We know about as much about software quality problems as they knew about the Black Plague in the 1600s. We've seen the victims' agonies and helped burn the corpses. We don't know what causes it; we don't really know if there is only one disease. We just suffer -- and keep pouring our sewage into our water supply." ~ Tom Van Vleck
+"I've seen it on Google Maps; I think I know what I'm talking about" ~ Kyle Johnson
+"Wat." ~ Chase Geigle
+"I've seen many balls. Actually, let's do an example without balls." ~ Jack Toole
+"Find your points of interest, compute HOG features, bung them into a classifier, and see what you get." ~ D.A. Forsyth
+"You *could* call it an ape, and that an ape, but that would just be phylogenic pettifogging." ~ D.A. Forsyth
+"@return A voidean value indicating whether the test was successful." ~ lab_avl
+"Don't beg. Earn it. Then it will be granted to you." ~ Adroc Thurston
+"Rejoice!" ~ Kotomine Kirei
+"I think it's hacky, but maybe it's just good." ~ Sean Massung
+"This is 5 probability." ~ Jack Toole
+"Anything that can go wrong will go wrong." ~ Murphy's Law
+"**** ******** **** nickels!!!" ~ Chase Geigle
+"If you have a procedure with ten parameters, you probably missed some." ~ Alan J. Perlis
+"Hulp -> Wat is dit?" ~ LibreOffice Impress
+"There are 10 types of people in the world. Those who understand binary, those who don't, and those who didn't expect this joke to be in base 3." ~ Anonymous
+"All that is gold does not glitter, / Not all those who wander are lost;" ~ Bilbo Baggins
+"Ridiculous!" ~ Kyle Johnson
+"In the absence of our leader, I'm assuming control." ~ Kyle Johnson
+"I don't try to be a threat to Microsoft, mainly because I don't really see them as competition. Especially not Windows -- the goals of Linux and Windows are simply so different." ~ Linus Torvalds
+"The slogan of Subversion for a while was "CVS done right", or something like that, and if you start with that kind of slogan, there's nowhere you can go. There is no way to do CVS right." ~ Linus Torvalds
+"If you can't remember a formula during the exam it's probably not important." ~ Prof. Chengxiang Zhai
+"I'm not saying he's evil incarnate based on that fact alone; I've always known it." ~ REDACTED
+"Anti-intellectualism has been a constant thread winding its way through our political and cultural life, nurtured by the false notion that democracy means that 'my ignorance is just as good as your knowledge.'" ~ Isaac Asimov
+"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
+"Sometimes I just like to throw things." ~ Cinda Heeren
+"Be careful about using the following code -- I've only proven that it works, I haven't tested it." ~ Donald Knuth
+"A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools." ~ Douglas Adams
+"(reading a password) Uppercase 0... [...] Lowercase 0..." ~ Sean Massung
+"The sooner you start to code, the longer the program will take." ~ R. Carlson
+"Who dares to teach must never cease to learn." ~ J.C. Dana
+"Simplicity is the ultimate sophistication." ~ Leonardo da Vinci
+"Computer Science is no more about computers than astronomy is about telescopes." ~ E. Dijkstra
+"Television won't be able to hold on to any market it captures after the first six months. People will soon get tired of staring at a plywood box every night." ~ Darryl Zanuck, 20th Century Fox, 1946
+"I think there is a world market for maybe five computers." ~ Thomas Watson, IBM, 1943
+"If at first you don't succeed, that's one data point." ~ Randall Munroe
+"It may look like I'm doing nothing, but I'm actively waiting for my problems to go away." ~ Scott Adams
+"At least for a while, in your heart of hearts you'll be confident only that the university will soon enough discover its error in awarding you the PhD, and at some point will brand you (in public no doubt) the fraud you know you are. This too will pass as you come to realize that students are extremely gullible and many of your colleagues are even greater frauds than you." ~ Berkeley PhD Advice
+"I did respond to your email, but I might have forgotten to hit send." ~ Cinda Heeren
+"There's not enough wiggleability, you know." ~ Eric Shaffer
+"Now that's just math for math's sake." ~ Prof. Julia Hockenmaier
+"Fish are meat, they're like water poultry." ~ Chase Geigle
+"Procrastination: working tomorrow for a better today." ~ Anonymous
+"I have never let my schooling interfere with my education." ~ Mark Twain
+"Let me tell you the secret that has led me to my goal. My strength lies solely in my tenacity." ~ Louis Pasteur
+"For humans, honesty is a matter of degree. Engineers are always honest in matters of technology and human relationships. That's why it's a good idea to keep engineers away from customers, romantic interests, and other people who can't handle the truth." ~ Scott Adams
+"I can calculate the motions of the heavenly bodies, but not the madness of people." ~ Isaac Newton
+"What is written without effort is, in general, read without pleasure." ~ Samuel Johnson
+"I think I may have made a student cry during my exam..." ~ Joe DiFebo
+"I hope this code makes sense when I wake up." ~ Jason Cho
+"I like it because it feels like I'm drinking something special." ~ Sean Massung
+"Chicken is basically a vegetable, I mean, if you compare it to steak." ~ Sean Massung
+"There's no real reason for a lot of the things that I say." ~ Urvashi Khandelwal
+"Now let me erase this before you all copy it down." ~ Alexey Stepanov
+"It's like comparing a small apple with a medium-sized apple." ~ Jason Cho
+"A lot of the things that I say are true, but I don't actually mean them." ~ Alexey Stepanov
+"int getRandomNumber() { return 4; } // chosen by fair dice roll. guaranteed to be random." ~ XKCD #221
+"Hey Jude / Your make is bad / You should fix that / Compiler error / Remember / To let it search the root path / Then you can start / To make it better" ~ Ryan North
+"And I'm sitting there hallucinating a bird on my pillow from the benadryl and I think to myself ... 'I need to write a poem about Makefiles'." ~ Lisa Sproat
+"Recursion is magic. " ~ Prof. Jeff Erickson | "Recursion is NOT magic." ~ Prof. Craig Zilles 
+"You didn't write that. I wrote that." ~ Matt Joras
+"It'll work, the stack's just not big enough." ~ Eric Rosenberg
+"Rubber duckies are love. Rubber duckies are life. Rubber duckies help you solve all your debugging problems." ~ Jia Wern Lim
+"I never code in C++. But when I do, I use polymorphism and rand() functions." ~ Chaitanya Datye
+"Work's best done when the deadline is closer." ~ Chaitanya Datye
+"C makes it easy to shoot yourself in the foot. C++ makes it harder, but when you do, you blow away your whole leg!" ~ Bjarne Stroustrup
+"You know what they say... Pythagoras's Theorem doesn't take into account road construction." ~ Tom Bogue
+"I don't say anything interesting." ~ Tom Bogue
+"The problem is not enough early" ~ Jordi Paris Ferrer
+"Software and cathedrals are much the same – first we build them, then we pray.” ~ Sam Redwine

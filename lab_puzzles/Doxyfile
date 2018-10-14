@@ -1,0 +1,4 @@
+@INCLUDE        = ../doxygen/doxygen.conf
+PROJECT_NAME    = "lab_puzzles"
+PROJECT_BRIEF   = "Devious Dictionaries: Cleverness Through Association"
+EXTRACT_PRIVATE = YES
