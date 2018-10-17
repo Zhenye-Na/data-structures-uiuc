@@ -15,22 +15,22 @@ using namespace cs225;
  *
  * @return The grayscale image.
  */
-PNG grayscale(PNG image) {
-  /// This function is already written for you so you can see how to
-  /// interact with our PNG class.
-  for (unsigned x = 0; x < image.width(); x++) {
-    for (unsigned y = 0; y < image.height(); y++) {
-      HSLAPixel & pixel = image.getPixel(x, y);
+ PNG grayscale(PNG image) {
+   /// This function is already written for you so you can see how to
+   /// interact with our PNG class.
+   for (unsigned x = 0; x < image.width(); x++) {
+     for (unsigned y = 0; y < image.height(); y++) {
+       HSLAPixel & pixel = image.getPixel(x, y);
 
-      // `pixel` is a pointer to the memory stored inside of the PNG `image`,
-      // which means you're changing the image directly.  No need to `set`
-      // the pixel since you're directly changing the memory of the image.
-      pixel.s = 0;
-    }
-  }
+       // `pixel` is a pointer to the memory stored inside of the PNG `image`,
+       // which means you're changing the image directly.  No need to `set`
+       // the pixel since you're directly changing the memory of the image.
+       pixel.s = 0;
+     }
+   }
 
-  return image;
-}
+   return image;
+ }
 
 
 
@@ -45,7 +45,7 @@ PNG grayscale(PNG image) {
  * is a total of `sqrt((3 * 3) + (4 * 4)) = sqrt(25) = 5` pixels away and
  * its luminance is decreased by 2.5% (0.975x its original value).  At a
  * distance over 160 pixels away, the luminance will always decreased by 80%.
- * 
+ *
  * The modified PNG is then returned.
  *
  * @param image A PNG object which holds the image data to be modified.
@@ -54,27 +54,27 @@ PNG grayscale(PNG image) {
  *
  * @return The image with a spotlight.
  */
-PNG createSpotlight(PNG image, int centerX, int centerY) {
+ PNG createSpotlight(PNG image, int centerX, int centerY) {
 
-  for (unsigned x = 0; x < image.width(); x++) {
-    for (unsigned y = 0; y < image.height(); y++) {
-      HSLAPixel & pixel = image.getPixel(x, y);
+   for (unsigned x = 0; x < image.width(); x++) {
+     for (unsigned y = 0; y < image.height(); y++) {
+       HSLAPixel & pixel = image.getPixel(x, y);
 
-      // double distance = sqrt( pow(x - centerX, 2) + pow(y - centerY, 2) );
-      double distance = sqrt( (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));
-      if (distance < 160) {
-        double keep = 1 - 0.5 * distance / 100;
-        pixel.l = pixel.l * keep;
-      } else {
-        pixel.l = pixel.l * 0.2;
-      }
-    }
-  }
+       // double distance = sqrt( pow(x - centerX, 2) + pow(y - centerY, 2) );
+       double distance = sqrt( (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));
+       if (distance < 160) {
+         double keep = 1 - 0.5 * distance / 100;
+         pixel.l = pixel.l * keep;
+       } else {
+         pixel.l = pixel.l * 0.2;
+       }
+     }
+   }
 
-  return image;
-  
-}
- 
+   return image;
+
+ }
+
 
 /**
  * Returns a image transformed to Illini colors.
@@ -99,22 +99,22 @@ PNG illinify(PNG image) {
 
         if ( illini_blue_hue - pixel.h < pixel.h - illini_orange_hue ) {
           pixel.h = illini_blue_hue;
-	    } else {
+        } else {
           pixel.h = illini_orange_hue;
-	    }
+        }
       }
 
       else if (pixel.h < 360 && pixel.h > illini_blue_hue) {
         int dist_blue = pixel.h - illini_blue_hue;
-	    int dist_orge = 360 - pixel.h + illini_orange_hue;
-	
-	    if (dist_blue < dist_orge) {
-	      pixel.h = illini_blue_hue;
-	    } else {
-	      pixel.h = illini_orange_hue;
-	    }
+        int dist_orge = 360 - pixel.h + illini_orange_hue;
+
+        if (dist_blue < dist_orge) {
+          pixel.h = illini_blue_hue;
+        } else {
+          pixel.h = illini_orange_hue;
+        }
       }
-      
+
       else {
         pixel.h = illini_orange_hue;
       }
@@ -124,7 +124,7 @@ PNG illinify(PNG image) {
 
   return image;
 }
- 
+
 
 /**
 * Returns an immge that has been watermarked by another image.
@@ -148,10 +148,10 @@ PNG watermark(PNG firstImage, PNG secondImage) {
       // increase luminance if needed
       if (pixelSecond.l == 1) {
         if (pixelFirst.l + 0.2 <= 1) {
-	      pixelFirst.l = pixelFirst.l + 0.2;
-	    } else {
-	      pixelFirst.l = 1;
-	    }
+          pixelFirst.l = pixelFirst.l + 0.2;
+        } else {
+          pixelFirst.l = 1;
+        }
       }
 
     }
