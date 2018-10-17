@@ -70,6 +70,7 @@ PNG createSpotlight(PNG image, int centerX, int centerY) {
       }
     }
   }
+
   return image;
   
 }
@@ -91,34 +92,36 @@ PNG illinify(PNG image) {
 
   for (unsigned x = 0; x < image.width(); x++) {
     for (unsigned y = 0; y < image.height(); y++) {
+
       HSLAPixel & pixel = image.getPixel(x, y);
 
       if (pixel.h < illini_blue_hue && pixel.h > illini_orange_hue) {
-        if ( illini_blue_hue - pixel.h < pixel.h - illini_orange_hue ) {
-	  pixel.h = illini_blue_hue;
-	} else {
-	  pixel.h = illini_orange_hue;
-	}
 
+        if ( illini_blue_hue - pixel.h < pixel.h - illini_orange_hue ) {
+          pixel.h = illini_blue_hue;
+	    } else {
+          pixel.h = illini_orange_hue;
+	    }
       }
 
       else if (pixel.h < 360 && pixel.h > illini_blue_hue) {
-      
         int dist_blue = pixel.h - illini_blue_hue;
-	int dist_orge = 360 - pixel.h + illini_orange_hue;
+	    int dist_orge = 360 - pixel.h + illini_orange_hue;
 	
-	if (dist_blue < dist_orge) {
-	  pixel.h = illini_blue_hue;
-	} else {
-	  pixel.h = illini_orange_hue;
-	}
+	    if (dist_blue < dist_orge) {
+	      pixel.h = illini_blue_hue;
+	    } else {
+	      pixel.h = illini_orange_hue;
+	    }
       }
       
       else {
         pixel.h = illini_orange_hue;
       }
+
     }
   }
+
   return image;
 }
  
@@ -145,10 +148,10 @@ PNG watermark(PNG firstImage, PNG secondImage) {
       // increase luminance if needed
       if (pixelSecond.l == 1) {
         if (pixelFirst.l + 0.2 <= 1) {
-	  pixelFirst.l = pixelFirst.l + 0.2;
-	} else {
-	  pixelFirst.l = 1;
-	}
+	      pixelFirst.l = pixelFirst.l + 0.2;
+	    } else {
+	      pixelFirst.l = 1;
+	    }
       }
 
     }
