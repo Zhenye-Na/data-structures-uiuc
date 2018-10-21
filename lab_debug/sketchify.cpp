@@ -45,8 +45,6 @@ void sketchify(std::string inputFile, std::string outputFile) {
       // color the output pixel with my favorite color
       HSLAPixel* currOutPixel = &(output->getPixel(x, y));
       if (diff > 20) {
-        // cout << *myPixel << endl;
-        // cout << *currOutPixel << endl;
         *currOutPixel = *myPixel;
       }
     }
