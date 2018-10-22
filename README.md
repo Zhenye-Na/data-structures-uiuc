@@ -85,6 +85,20 @@ The MPs you will be doing in this class will serve many purposes:
 - They are an exercise learning to use the tools available to you to help you work more efficiently and to check the quality of your work.
 - You are given approximately two weeks for each MP (after MP1, which is just 1 week). Exact MP due dates will be announced in lecture and on the MP specification page.
 
+
+#### MPs
+
+| Assignment                              	| Due (Extra Credit) 	| Due (Final) 	|
+|-----------------------------------------	|--------------------	|-------------	|
+| MP 7: Mazes                             	| April 23           	| April 30    	|
+| MP 6 - Debugging: Useful Tools for Life 	| April 9            	| April 16    	|
+| MP 5: PhotoMosaic                       	| March 26           	| April 2     	|
+| MP 4: Flood Fill                        	| March 5            	| March 12    	|
+| MP 3: Images and Lists                  	| February 19        	| February 26 	|
+| MP 2: Images and Stickers               	| February 5         	| February 12 	|
+| MP 1: Image Manipulation                	|                    	| January 29  	|
+
+
 ### Lab Meetings
 
 There will be approximately 14 lab sections during the semester, each of which consists of a small intro and a lab exercise. See the top of this page for meeting times and locations. Lively discussion and collaboration with course staff and fellow students during the 2 hour labs should usually (but not always) result in significant progress toward finishing the exercise.
@@ -94,6 +108,26 @@ The purpose of labs is to help improve your programming abilities and reinforce 
 Lab sections are each worth 10 points each.
 
 Lab assignments will be released for all students before 7pm on Wednesday, and will be due the following Sunday at 11:59pm.
+
+
+#### Labs
+
+| Lab                                                               	| Due         	|
+|-------------------------------------------------------------------	|-------------	|
+| lab_ml: Lazy Machine Learning                                     	| April 29    	|
+| lab_graphs: Gory Graphs                                           	| April 22    	|
+| lab_puzzles: Devious Dictionaries: Cleverness Through Association 	| April 15    	|
+| lab_heaps: Precarious Priority Queues                             	| April 8     	|
+| lab_hash: Hellish Hash Tables                                     	| April 1     	|
+| lab_btree: Belligerent BTrees                                     	| March 27    	|
+| lab_avl: Awful AVL Trees                                          	| March 11    	|
+| lab_huffman: Hazardous Huffman Codes                              	| March 4     	|
+| lab_trees: Tempestuous Trees                                      	| February 25 	|
+| lab_quacks: Spiteful Stacks and Questionable Queues               	| February 18 	|
+| lab_inheritance: Insidious Inheritance                            	| February 11 	|
+| lab_memory: Malevolent Memories                                   	| February 4  	|
+| lab_debug: Disastrous Debugging                                   	| January 28  	|
+| lab_intro: Ineluctable Introduction                               	| January 21  	|
 
 
 ## Academic Integrity
