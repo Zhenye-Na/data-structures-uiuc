@@ -14,6 +14,49 @@
 
 using namespace std;
 
+/* copy Constructor */
+Allocator::Allocator(const Allocator &other) {
+    clear();
+	  copy(other);
+}
+
+/* assignment operator */
+Allocator &Allocator::operator=(const Allocator &other) {
+	if (this != &other) {
+		clear();
+		copy(other);
+	}
+	return *this;
+}
+
+/* deconstructor */
+Allocator::~Allocator() {
+	  clear();
+}
+
+void Allocator::clear() {
+	if (alpha != NULL)
+		delete [] alpha;
+	if (rooms != NULL)
+		delete [] rooms;
+}
+
+void Allocator::copy(const Allocator &other) {
+	  roomCount     = other.roomCount;
+	  studentCount  = other.studentCount;
+	  totalCapacity = other.totalCapacity;
+
+    rooms = new Room[roomCount];
+    for(int i = 0; i < roomCount; i++) {
+    	rooms[i] = other.rooms[i];
+    }
+
+    alpha = new Letter[26];
+    for(int i = 0; i < 26; i++) {
+    	alpha[i] = other.alpha[i];
+    }
+}
+
 Allocator::Allocator(const string& studentFile, const string& roomFile)
 {
     createLetterGroups();
@@ -45,6 +88,9 @@ void Allocator::loadStudents(const string& file)
 
 void Allocator::loadRooms(const string& file)
 {
+    // initialization for rooms
+    roomCount = fileio::getNumRooms();
+
     // Read in rooms
     fileio::loadRooms(file);
     rooms = new Room[roomCount];
@@ -52,9 +98,9 @@ void Allocator::loadRooms(const string& file)
     totalCapacity = 0;
     int i = 0;
     while (fileio::areMoreRooms()) {
-        i++;
         rooms[i] = fileio::nextRoom();
         totalCapacity += rooms[i].capacity;
+        i++;
     }
 }
 
