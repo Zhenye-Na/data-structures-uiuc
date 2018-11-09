@@ -60,7 +60,7 @@ void Room::print(std::ostream & stream /* = std::cout */)
 
 void Room::clear()
 {
-    if (letters != nullptr)
+    if (letters != NULL)
         delete [] letters;
 }
 

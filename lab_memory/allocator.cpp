@@ -88,11 +88,9 @@ void Allocator::loadStudents(const string& file)
 
 void Allocator::loadRooms(const string& file)
 {
-    // initialization for rooms
-    roomCount = fileio::getNumRooms();
-
     // Read in rooms
     fileio::loadRooms(file);
+    roomCount = fileio::getNumRooms();
     rooms = new Room[roomCount];
 
     totalCapacity = 0;

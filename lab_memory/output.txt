@@ -1,0 +1,12 @@
+
+Room Allocation (237/248)
+MEB 153 (31/32): W F
+MEB 218 (30/31): L H
+MEB 243 (29/30): S P Q
+MEB 335 (28/30): K R U V
+Siebel 1105 (24/24): G A X
+Siebel 1109 (23/24): M J I
+Siebel 1302 (20/21): Z N O
+Siebel 1304 (19/21): B D E
+BUR 140 (33/35): C Y T
+
