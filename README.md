@@ -1,4 +1,4 @@
-# CS225: Data Structures in Spring 2018, UIUC
+# CS225: Data Structures in UIUC
 
 > Please read [**Academic Integrity**](#academic-integrity) first before using this repository, **SERIOUSLY**.
 
