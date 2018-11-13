@@ -1,0 +1,3 @@
+@INCLUDE      = ../../doxygen/doxygen.conf
+PROJECT_NAME  = "lab_quacks"
+PROJECT_BRIEF = "Spiteful Stacks and Questionable Queues"
