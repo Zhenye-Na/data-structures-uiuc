@@ -202,23 +202,6 @@ void Image::illinify() {
 }
 
 
-// def nearestNeighborScaling( source, newWid, newHt ):
-//     target = makeEmptyPicture(newWid, newHt)
-//     width = getWidth( source )
-//     height = getHeight( source )
-//     for x in range(0, newWid):
-//       for y in range(0, newHt):
-//         srcX = int( round( float(x) / float(newWid) * float(width) ) )
-//         srcY = int( round( float(y) / float(newHt) * float(height) ) )
-//         srcX = min( srcX, width-1)
-//         srcY = min( srcY, height-1)
-//         tarPix = getPixel(target, x, y )
-//         srcColor = getColor( getPixel(source, srcX, srcY) )
-//         setColor( tarPix, srcColor)
-//
-//     return target
-
-
 /*
  * Scale the Image by a given factor.
  *
@@ -233,36 +216,17 @@ void Image::scale(double factor) {
   unsigned width = this->width();
   unsigned height = this->height();
 
-  Image *copyImage = this;
+  Image *srcImage = this;
   this->resize(target_width, target_height);
 
-  for (unsigned x = 0; x < width; x++) {
-    for (unsigned y = 0; y < height; y++) {
-
-      unsigned srcX = (unsigned)( x / target_width) * width;
-      unsigned srcY = (unsigned)( x / target_height) * height;
-
-      if (srcX > width - 1) {
-        srcX = width - 1;
-      }
-
-      if (srcY > height - 1) {
-        srcY = height - 1;
-      }
+  for (unsigned x = 0; x < target_width; x++) {
+    for (unsigned y = 0; y < target_height; y++) {
+      unsigned srcX = (unsigned)( (float)x / target_width * width);
+      unsigned srcY = (unsigned)( (float)y / target_height * height);
 
       HSLAPixel & newPixel = this->getPixel(x, y);
-      HSLAPixel & oldPixel = copyImage->getPixel(srcX, srcY);
+      HSLAPixel & oldPixel = srcImage->getPixel(srcX, srcY);
       newPixel = oldPixel;
-
-      // unsigned int oldX = (unsigned int)(x / factor);
-      // unsigned int oldY = (unsigned int)(y / factor);
-      //
-      // if (oldX < copyImage->width() && oldY < copyImage->height()) {
-      //   HSLAPixel & oldPixel = copyImage->getPixel(oldX, oldY);
-      //   HSLAPixel & newPixel = this->getPixel(x, y);
-      //
-      //   newPixel = oldPixel;
-      // }
     }
   }
 }
