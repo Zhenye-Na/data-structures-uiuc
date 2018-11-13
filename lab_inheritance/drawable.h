@@ -18,9 +18,8 @@ using namespace cs225;
 class Drawable
 {
   public:
-    ~Drawable()
-    { /* Nothing */
-    }
+    /* Nothing */
+    virtual ~Drawable() {};
 
     /**
      * @brief This method will draw the object onto the canvas.

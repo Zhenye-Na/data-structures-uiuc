@@ -142,3 +142,13 @@ void Truck::clear()
     delete engine;
 }
 
+void Truck::draw(PNG* canvas) const {
+  trailer->draw(canvas);   // draws a trailer even though trailer is a Drawable*
+  cabin->draw(canvas);     // draws a cabin even though cabin is a Drawable*
+  window->draw(canvas);    // draws a window even though window is a Drawable*
+  engine->draw(canvas);    // draws a engine even though engine is a Drawable*
+
+  for (int i = 0; i < NUM_WHEELS; i++) {
+    wheels[i]->draw(canvas);
+  }
+}

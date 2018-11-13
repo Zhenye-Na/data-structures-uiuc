@@ -27,17 +27,17 @@ Shape::Shape(const Vector2& pcenter, const HSLAPixel& pcolor)
     /* Nothing.  See initialization list. */
 }
 
-int Shape::area() const
-{
-    /* Shape's don't have an area since they cannot be made */
-    return 0;
-}
+// int Shape::area() const
+// {
+//     /* Shape's don't have an area since they cannot be made */
+//     return 0;
+// }
 
-int Shape::perimeter() const
-{
-    /* Shape's don't have a perimeter since they cannot be made */
-    return 0;
-}
+// int Shape::perimeter() const
+// {
+//     /* Shape's don't have a perimeter since they cannot be made */
+//     return 0;
+// }
 
 bool Shape::contains(const Vector2& p) const
 {
