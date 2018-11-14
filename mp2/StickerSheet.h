@@ -16,7 +16,7 @@ namespace cs225 {
     /**
       * Initializes this StickerSheet with a base picture and the ability to
       * hold a max number of stickers (Images) with indices 0 through max - 1.
-      * 
+      *
       * Parameters
       *   picture: The base picture to use in the StickerSheet
       *   max: The maximum number of stickers (Images) on this StickerSheet
@@ -47,7 +47,7 @@ namespace cs225 {
       * Returns
       *   a constant Scene reference
       */
-    const StickerSheet& StickerSheet::operator=	(const StickerSheet & other);
+    const StickerSheet& StickerSheet::operator= (const StickerSheet & other);
 
     /**
       * Modifies the maximum number of stickers that can be stored on this
@@ -66,9 +66,9 @@ namespace cs225 {
       * The sticker must be added to the lowest possible layer available.
       *
       * Parameters
-      *   sticker:	The Image of the sticker.
-      *   x:	The x location of the sticker on the StickerSheet
-      *   y:	The y location of the sticker on the StickerSheet
+      *   sticker: The Image of the sticker.
+      *   x: The x location of the sticker on the StickerSheet
+      *   y: The y location of the sticker on the StickerSheet
       * Returns
       *   The zero-based layer index the sticker was added to, or -1 if the
       *   sticker cannot be added.
@@ -82,9 +82,9 @@ namespace cs225 {
       * must return false. Otherwise, this function returns true.
       *
       * Parameters
-      *   index:	Zero-based layer index of the sticker.
-      *   x:	The new x location of the sticker on the StickerSheet
-      *   y:	The new y location of the sticker on the StickerSheet
+      *   index: Zero-based layer index of the sticker.
+      *   x: The new x location of the sticker on the StickerSheet
+      *   y: The new y location of the sticker on the StickerSheet
       * Returns
       *   true: if the translate was successful; otherwise false.
       */
@@ -94,7 +94,7 @@ namespace cs225 {
       * Removes the sticker at the given zero-based layer index.
       *
       * Parameters
-      *   index	The layer in which to delete the png
+      *   index The layer in which to delete the png
       */
     void StickerSheet::removeSticker(unsigned index);
 
@@ -105,7 +105,7 @@ namespace cs225 {
       * If the index is invalid, return NULL.
       *
       * Parameters
-      *   index	The layer in which to get the sticker.
+      *   index: The layer in which to get the sticker.
       * Returns
       *   A pointer to a specific Image in the StickerSheet.
       */
