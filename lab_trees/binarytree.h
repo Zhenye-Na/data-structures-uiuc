@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stack>
 #include <sstream>
 #include "random.h"
 using namespace std;
@@ -86,7 +87,7 @@ class BinaryTree
     /**
      * @return The root of the binary tree
      */
-    Node* getRoot() const;  
+    Node* getRoot() const;
 
     /**
      * This lab deals with the following six helper functions:
@@ -129,7 +130,6 @@ class BinaryTree
      */
     bool isOrderedRecursive() const;
 
-
     /**
      * creates vectors of all the possible paths from the root of the tree to any leaf
      * node and adds it to another vector.
@@ -138,7 +138,7 @@ class BinaryTree
      * added before paths ending in a node further to the right.
      * @param paths vector of vectors that contains path of nodes
      */
-    void printPaths(vector<vector<T> > &paths) const;
+    void printPaths(vector<vector<T>> &paths) const;
 
     /**
      * Each node in a tree has a distance from the root node - the depth of that
@@ -157,7 +157,7 @@ class BinaryTree
       * after that node.
       * @param treeVector stores nodes in order
      */
-    void inOrder(vector <T>& treeVector );
+    void inOrder(vector <T>& treeVector);
 
   private:
 
@@ -175,10 +175,27 @@ class BinaryTree
     int height(const Node* subRoot) const;
 
     /**
+     * Private helper function for the public mirror function.
+     * @param subRoot The current node in the recursion
+     */
+    void mirror(Node *& subRoot);
+
+    /**
      * Private helper function for the public printLeftToRight function.
      * @param subRoot The current node in the recursion
      */
     void printLeftToRight(const Node* subRoot) const;
+
+    /**
+     * Private helper function for the public isOrderedRecursive function.
+     * @param subRoot The current node in the recursion
+     */
+    bool isOrderedRecursiveHelper(const Node* subRoot) const;
+
+    void getPath(Node* node, stack<Node*>& nodes, vector<vector<T>> &paths) const;
+    void pushStacktoVector(stack<Node*> nodes, vector<vector<T>> &paths) const;
+
+    int sumDistances(Node * node, int layer) const;
 
     /**
      * Private helper function for the public insert function.

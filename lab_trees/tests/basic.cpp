@@ -140,7 +140,7 @@ TEST_CASE("test_isOrderedRecursive", "[weight=10]"){
 	nodes.push_back(69); //
 	nodes.push_back(80); // 0 24             90
 	nodes.push_back(90); //
-	nodes.push_back(0); //
+	nodes.push_back(0);  //
 	nodes.push_back(24); //
 
 	BinaryTree<int> tree;
@@ -154,10 +154,10 @@ TEST_CASE("test_isOrderedRecursive", "[weight=10]"){
 	REQUIRE( (*it)->elem == 24 ); ++it;
 	REQUIRE( (*it)->elem == 39 ); ++it;
 	REQUIRE( (*it)->elem == 47 ); ++it;
-	REQUIRE( (*it)->elem == 52 ); ++it;  
+	REQUIRE( (*it)->elem == 52 ); ++it;
 	REQUIRE( (*it)->elem == 69 ); ++it;
 	REQUIRE( (*it)->elem == 71 ); ++it;
-	REQUIRE( (*it)->elem == 80 ); ++it;  
+	REQUIRE( (*it)->elem == 80 ); ++it;
 	REQUIRE( (*it)->elem == 90 ); ++it;
 
  }
@@ -173,23 +173,23 @@ TEST_CASE("test_printPaths", "[weight=10"){
 	nodes.push_back(69); //
 	nodes.push_back(80); // 0 24             90
 	nodes.push_back(90); //
-	nodes.push_back(0); //
+	nodes.push_back(0);  //
 	nodes.push_back(24); //
 
 	BinaryTree<int> tree;
 	for(size_t i = 0; i < nodes.size(); i++)
 		tree.insert(nodes[i], true);
 
-  vector<vector<int> > treePaths;
+  vector<vector<int>> treePaths;
 	tree.printPaths(treePaths);
 
-	int arr[5][4] = {{52,39,17,0},{52,39,17,24},{52,39,47,-1},{52,71,69,-1},{52,71,80,90}};
+	int arr[5][4] = {{52,39,17,0}, {52,39,17,24}, {52,39,47,-1}, {52,71,69,-1}, {52,71,80,90}};
 
   vector<vector <int> > treePathSolution;
-	for(int i=0;i<5;i++){
+	for(int i = 0; i < 5; i++){
   	vector<int> temp;
-    for(int j=0; j<4; j++){
-      if(arr[i][j]!=-1)
+    for(int j = 0; j < 4; j++){
+      if(arr[i][j] != -1)
        temp.push_back(arr[i][j]);
      }
   	treePathSolution.push_back(temp);
@@ -217,14 +217,14 @@ TEST_CASE("test_sumDistances", "[weight=10]"){
 
  int main(int argc, char* argv[])
  {
-        srand(time(NULL));
+   srand(time(NULL));
 
-    // put our beloved quotes
-    print_quote("tests/quotes.txt");
+   // put our beloved quotes
+   print_quote("tests/quotes.txt");
 
-   //  print_valgrind();
+   // print_valgrind();
 
-    int result = Catch::Session().run(argc, argv);
+   int result = Catch::Session().run(argc, argv);
 
-    return (result < 0xFF ? result : 0xFF);
+   return (result < 0xFF ? result : 0xFF);
  }

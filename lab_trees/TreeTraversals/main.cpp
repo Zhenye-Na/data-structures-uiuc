@@ -11,7 +11,7 @@ int main() {
         myTree.insert(i);
 	myTree.print();
 
-	
+
 	PreorderTraversal<int> pot(myTree.getRoot());
 	cout<<"Preorder Traversal: ";
 	for (TreeTraversal<int>::Iterator it = pot.begin(); it != pot.end(); ++it) {
