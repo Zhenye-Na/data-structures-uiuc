@@ -190,9 +190,10 @@ class BinaryTree
      * Private helper function for the public isOrderedRecursive function.
      * @param subRoot The current node in the recursion
      */
-    bool isOrderedRecursiveHelper(const Node* subRoot) const;
+    bool isOrderedRecursiveHelper(Node* node, T min, T max) const;
 
     void getPath(Node* node, stack<Node*>& nodes, vector<vector<T>> &paths) const;
+
     void pushStacktoVector(stack<Node*> nodes, vector<vector<T>> &paths) const;
 
     int sumDistances(Node * node, int layer) const;

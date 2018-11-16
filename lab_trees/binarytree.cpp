@@ -129,29 +129,19 @@ bool BinaryTree<T>::isOrderedIterative() const
 template <typename T>
 bool BinaryTree<T>::isOrderedRecursive() const
 {
-  return isOrderedRecursiveHelper(root);
+  return isOrderedRecursiveHelper(root, INT_MIN, INT_MAX);
 }
 
 template <typename T>
-bool BinaryTree<T>::isOrderedRecursiveHelper(const Node* subRoot) const
+bool BinaryTree<T>::isOrderedRecursiveHelper(Node* node, T min, T max) const
 {
-  // root is NULL or root has no children
-  if (subRoot == NULL || (subRoot->left == NULL && subRoot->right == NULL)) {
+  if(node == NULL) {
     return true;
-  }
-
-  // decresing order: left->elem > root->elem
-  if (subRoot->left != NULL && subRoot->left->elem > subRoot->elem) {
+  } else if(node->elem < min || node->elem > max){
     return false;
+  } else {
+      return isOrderedRecursiveHelper(node->left, min, node->elem) && isOrderedRecursiveHelper(node->right, node->elem, max);
   }
-
-  // decresing order: root->elem > right->elem
-  if (subRoot->right != NULL && subRoot->right->elem < subRoot->elem) {
-    return false;
-  }
-
-  // return true if left/right subtree is in ordered
-  return (isOrderedRecursiveHelper(subRoot->left) && isOrderedRecursiveHelper(subRoot->right));
 }
 
 /**
