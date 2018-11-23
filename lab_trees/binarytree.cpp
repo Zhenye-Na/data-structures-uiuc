@@ -110,11 +110,11 @@ bool BinaryTree<T>::isOrderedIterative() const
   T val = (*it)->elem;
 
   // iteratively check whether is ordered
-	for (++it; it != iot.end(); ++it) {
-		if (val > (*it)->elem) {
+  for (++it; it != iot.end(); ++it) {
+    if (val > (*it)->elem) {
       return false;
     }
-	}
+  }
 
   // if reach here, then is ordered
   return true;
@@ -135,7 +135,7 @@ bool BinaryTree<T>::isOrderedRecursive() const
 template <typename T>
 bool BinaryTree<T>::isOrderedRecursiveHelper(Node* node, T min, T max) const
 {
-  if(node == NULL) {
+  if (node == NULL) {
     return true;
   } else if(node->elem < min || node->elem > max){
     return false;
