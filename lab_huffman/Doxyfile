@@ -1,0 +1,4 @@
+@INCLUDE        = ../doxygen/doxygen.conf
+PROJECT_NAME    = "lab_huffman"
+PROJECT_BRIEF   = "Hazardous Huffman Codes"
+EXTRACT_PRIVATE = YES
