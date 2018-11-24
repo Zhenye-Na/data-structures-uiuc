@@ -1,0 +1,3 @@
+@INCLUDE      = ../doxygen/doxygen.conf
+PROJECT_NAME  = "MP7"
+PROJECT_BRIEF = "Mazes"
