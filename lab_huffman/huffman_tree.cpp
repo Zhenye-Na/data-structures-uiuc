@@ -86,7 +86,22 @@ HuffmanTree::removeSmallest(queue<TreeNode*>& singleQueue,
      * smaller of the two queues heads is the smallest item in either of
      * the queues. Return this item after removing it from its queue.
      */
-    return NULL;
+
+    TreeNode* smallest;
+    if (singleQueue.empty()) {
+      smallest = mergeQueue.front();
+      mergeQueue.pop();
+    } else if (mergeQueue.empty()) {
+      smallest = singleQueue.front();
+      singleQueue.pop();
+    } else if (mergeQueue.front()->freq < singleQueue.front()->freq) {
+      smallest = mergeQueue.front();
+      mergeQueue.pop();
+    } else {
+      smallest = singleQueue.front();
+      singleQueue.pop();
+    }
+    return smallest;
 }
 
 void HuffmanTree::buildTree(const vector<Frequency>& frequencies)
@@ -112,6 +127,45 @@ void HuffmanTree::buildTree(const vector<Frequency>& frequencies)
      * to the root and you're done!
      */
 
+    // whether combine signleQueue and mergeQueue
+    auto shouldCombine = [&singleQueue, &mergeQueue]() -> bool {
+      return singleQueue.size() + mergeQueue.size() > 1;
+    };
+
+    // create combination nodes push to mergeQueue
+    auto combineNodes = [this, &singleQueue, &mergeQueue]() -> void {
+      TreeNode* smaller = this->removeSmallest(singleQueue, mergeQueue);
+      TreeNode* larger  = this->removeSmallest(singleQueue, mergeQueue);
+      TreeNode* combination = new TreeNode(smaller->freq.getFrequency() +
+                                           larger ->freq.getFrequency() );
+      combination->left = smaller;
+      combination->right = larger;
+      mergeQueue.push(combination);
+    };
+
+    // assign roots
+    auto assignRoot = [this, &singleQueue, &mergeQueue]() -> void {
+      if (singleQueue.empty()) {
+        this->root_ = mergeQueue.front();
+        mergeQueue.pop();
+      } else {
+        this->root_ = singleQueue.front();
+        singleQueue.pop();
+      }
+    };
+
+    // place all of the leaf nodes into the singleQueue
+    for (auto value: frequencies) {
+      TreeNode* temp = new TreeNode(value);
+      cout << value.getFrequency() << endl;
+      singleQueue.push(temp);
+    }
+
+    // main algorithm
+    while (shouldCombine()) {
+      combineNodes();
+    }
+    assignRoot();
 }
 
 string HuffmanTree::decodeFile(BinaryFileReader& bfile)
@@ -124,18 +178,38 @@ string HuffmanTree::decodeFile(BinaryFileReader& bfile)
 void HuffmanTree::decode(stringstream& ss, BinaryFileReader& bfile)
 {
     TreeNode* current = root_;
+
+    // 0 -> left and 1 -> right
+    auto moveCurrent = [&current](int bit) -> void {
+      if (bit) {
+        current = current->right;
+      } else {
+        current = current->left;
+      }
+    };
+
+    // print character in leaf node
+    auto printIfNeeded = [this, &ss, &current]() -> void {
+      if (current->left == NULL && current->right == NULL) {
+        ss << current->freq.getCharacter();
+        current = this->root_;
+      }
+    };
+
     while (bfile.hasBits()) {
-        /**
-         * @todo Your code here!
-         *
-         * This code is reading in all of the bits in the binary file
-         * given. After reading a bit, we go left if the bit was a 0 (or
-         * false), and we go right if the bit was a 1 (or true).
-         *
-         * Special case: if we are at a leaf node, we should "print" its
-         * character to the stringstream (with operator<<, just like cout)
-         * and start traversing from the root node again.
-         */
+      /**
+       * @todo Your code here!
+       *
+       * This code is reading in all of the bits in the binary file
+       * given. After reading a bit, we go left if the bit was a 0 (or
+       * false), and we go right if the bit was a 1 (or true).
+       *
+       * Special case: if we are at a leaf node, we should "print" its
+       * character to the stringstream (with operator<<, just like cout)
+       * and start traversing from the root node again.
+       */
+      moveCurrent(bfile.getNextBit());
+      printIfNeeded();
     }
 }
 
@@ -161,6 +235,20 @@ void HuffmanTree::writeTree(TreeNode* current, BinaryFileWriter& bfile)
      * version: this is fine, as the structure of the tree still reflects
      * what the relative frequencies were.
      */
+
+     if (current == NULL) {
+       return;
+     }
+
+     if (current->left == NULL && current->right == NULL) {
+       bfile.writeBit(1);
+       bfile.writeByte(current->freq.getCharacter());
+     } else {
+       bfile.writeBit(0);
+       writeTree(current->left,  bfile);
+       writeTree(current->right, bfile);
+     }
+
 }
 
 HuffmanTree::TreeNode* HuffmanTree::readTree(BinaryFileReader& bfile)
@@ -182,7 +270,18 @@ HuffmanTree::TreeNode* HuffmanTree::readTree(BinaryFileReader& bfile)
      *         if it did not create one.
      */
 
-    return NULL;
+     while (bfile.hasBits()) {
+       if (bfile.getNextBit()) {
+         return new TreeNode(Frequency(bfile.getNextByte(), 0));
+       } else {
+         TreeNode* internal = new TreeNode(0);
+         internal->left  = readTree(bfile);
+         internal->right = readTree(bfile);
+         return internal;
+       }
+     }
+
+     return NULL;
 }
 
 void HuffmanTree::buildMap(TreeNode* current, vector<bool>& path)
