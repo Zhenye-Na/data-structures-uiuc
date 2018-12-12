@@ -195,12 +195,19 @@ class AVLTree
      * @param node The node to balance.
      */
     void rebalance(Node*& node);
+    int balance(Node*& subtree);
 
     /**
      * @param node The node's height to check
      * @return The height of the node if it's non-`NULL` or -1 if it is `NULL`
      */
     int heightOrNeg1(const Node* node) const;
+
+    /**
+     * Calculate height of subtree
+     * @param subtree The subtree
+     */
+    void calculateHeight(Node*& subtree);
 
     /**
      * Swap the keys and values of two nodes.
@@ -214,6 +221,8 @@ class AVLTree
      * @param subRoot The current node in the recursion
      */
     Node* copy(const Node* subRoot);
+
+    Node*& rightMostNode(Node*& subtree);
 
     /**
      * Private helper function for clear that clears beneath the parameter node.
