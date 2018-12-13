@@ -36,6 +36,10 @@ public:
 private:
 	/** @todo [Part 1] */
 	/** add private members here*/
+  stack<Point> list_;
+  PNG png_;
+  Point start_;
+  double tolerance_;
 };
 
 #endif
