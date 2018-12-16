@@ -163,7 +163,9 @@ void SCHashTable<K, V>::resizeTable()
             nTable[idx].push_front(p);
         }
     }
+
     delete[] table;
+    // don't delete elements since we just moved their pointers around
     table = nTable;
     size = newSize;
 }

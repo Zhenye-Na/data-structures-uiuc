@@ -35,8 +35,8 @@ LogfileParser::LogLine::LogLine(const string& line)
         dte += dline;
         dte += " ";
     } while (iss);
-		
-    dte = dte.substr(0, dte.length() - 6); 
+
+    dte = dte.substr(0, dte.length() - 6);
     std::tm tm = {};
     std::stringstream ss(dte);
     ss >> std::get_time(&tm, "%a %b %d %H:%M:%S %Y");
@@ -73,6 +73,15 @@ LogfileParser::LogfileParser(const string& fname) : whenVisitedTable(256)
          * this problem. This should also build the uniqueURLs member
          * vector as well.
          */
+         if (!pageVisitedTable.keyExists(ll.url)) {
+             pageVisitedTable[ll.url] = true;
+             uniqueURLs.push_back(ll.url);
+         }
+
+         string k = ll.customer + ll.url;
+         if (!(whenVisitedTable.keyExists(k) && ll.date <= whenVisitedTable[k]))
+             whenVisitedTable[k] = ll.date;
+
     }
     infile.close();
 }
@@ -91,10 +100,7 @@ bool LogfileParser::hasVisited(const string& customer, const string& url) const
      * @todo Implement this function.
      */
 
-    (void) customer; // prevent warnings... When you implement this function, remove this line.
-    (void) url;      // prevent warnings... When you implement this function, remove this line.
-
-    return true; // replaceme
+    return whenVisitedTable.keyExists(customer + url);
 }
 
 /**
@@ -118,7 +124,7 @@ time_t LogfileParser::dateVisited(const string& customer,
     (void) customer; // prevent warnings... When you implement this function, remove this line.
     (void) url;      // prevent warnings... When you implement this function, remove this line.
 
-    return time_t(); // replaceme
+    return whenVisitedTable.find(customer + url); // replaceme
 }
 
 /**
