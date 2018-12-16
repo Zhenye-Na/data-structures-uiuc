@@ -59,7 +59,8 @@ void KDTree<Dim>::printTree(ostream& out /*cout*/ ,
     for (int row = 0; row < height;) {
         for (int d = 0; d < Dim + 1 && row < height; d++, row++) {
             if (d == currd)
-                colored_out::output_bold_digits(output[row], out, enable_bold);//TODO: check what this does
+                //TODO: check what this does
+                colored_out::output_bold_digits(output[row], out, enable_bold);
             else
                 out << output[row];
             out << endl;
@@ -85,7 +86,7 @@ void KDTree<Dim>::printTree(KDTreeNode * subroot, vector<string>& output,
                             int left, int top, int width, int currd) const
 {
     // Convert data to string
-    //int med = (low + high) / 2;
+    // int med = (low + high) / 2;
 
     vector<string> nodeStr;
     nodeStr.reserve(Dim);

@@ -260,6 +260,28 @@ class KDTree
     /**
      * @todo Add your helper functions here.
      */
+
+    /** Helper function to build tree. */
+    void build(int start, int end, int dimension);
+
+    /** Helper function to do quick select. */
+    void quickSelect(int start, int end, int k, int dimension);
+
+    /** Hekoer function to do partition for quick select. */
+    int partition(int start, int end, int pivot, int dimension);
+
+    double getDistance(const Point<Dim>& query, const Point<Dim>& currBest) const;
+
+    bool possibleOtherSide(const Point<Dim>& query,
+                           const Point<Dim>& curr,
+                           int dimension,
+                           double distance) const;
+
+    /** Helper fctn to get neighbor. */
+    void findNearestNeighborHelper(const Point<Dim>& query,
+                                   Point<Dim>& currBest,
+                                   int start, int end, int dimension,
+                                   double& distance, bool& secondSide) const;
 };
 
 #include "kdtree.cpp"

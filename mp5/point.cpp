@@ -14,9 +14,10 @@ Point<Dim>::Point() {
         vals[i] = 0;
 }
 
-/* Point constructor
-   Copy the array of points in
-*/
+/*
+ * Point constructor
+ * Copy the array of points in
+ */
 template <int Dim>
 Point<Dim>::Point(double arr[Dim]) {
     for (int i = 0; i < Dim; ++i)
@@ -52,7 +53,7 @@ Point<Dim>::Point(T x, ...) {
 }
 
 template <int Dim>
-Point<Dim>& Point<Dim>::operator=(const Point<Dim>& other) 
+Point<Dim>& Point<Dim>::operator=(const Point<Dim>& other)
 {
     for (int i = 0; i < Dim; i++) {
         vals[i] = other.vals[i];
