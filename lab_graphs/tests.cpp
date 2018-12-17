@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
             {
                  start = "Nagoya";
                  end = "Hitachinaka";
-            } 
+            }
         testShortestPath(graph, start, end, type);
     }
     else if (test == "path" && type == "random")

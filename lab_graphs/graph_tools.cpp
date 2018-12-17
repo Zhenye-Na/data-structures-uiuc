@@ -26,7 +26,58 @@
 int GraphTools::findMinWeight(Graph& graph)
 {
     //TODO: YOUR CODE HERE
-    return -1;
+    vector<Vertex> vertices = graph.getVertices();
+    vector<Edge> edges = graph.getEdges();
+    queue<Vertex> traverse;
+    int minWeight = INT_MAX;
+
+    for (size_t i = 0; i < vertices.size(); i++)
+        graph.setVertexLabel(vertices[i], "UNEXPLORED");
+
+    for (size_t i = 0; i < edges.size(); i++)
+        graph.setEdgeLabel(edges[i].source, edges[i].dest, "UNEXPLORED");
+
+    Vertex v = graph.getStartingVertex();
+
+    if (graph.getVertexLabel(v) == "UNEXPLORED") {
+        graph.setVertexLabel(v, "VISITED");
+        traverse.push(v);
+
+        while (!traverse.empty()) {
+            v = traverse.front();
+            traverse.pop();
+
+            vector<Vertex> adj = graph.getAdjacent(v);
+            for (size_t i = 0; i < adj.size(); i++) {
+                Vertex n = adj[i];
+
+                if (graph.getVertexLabel(n) == "UNEXPLORED") {
+                    graph.setEdgeLabel(v, n, "DISCOVERY");
+
+                    if (graph.getEdgeWeight(v, n) < minWeight)
+                        minWeight = graph.getEdgeWeight(v, n);
+
+                    graph.setVertexLabel(n, "VISITED");
+                    traverse.push(n);
+                } else if (graph.getEdgeLabel(v, n) == "UNEXPLORED") {
+                    if (graph.getEdgeWeight(v, n) < minWeight)
+                        minWeight = graph.getEdgeWeight(v, n);
+
+                    graph.setEdgeLabel(v, n, "CROSS");
+                }
+            }
+        }
+    }
+
+    Edge e;
+    for (size_t i = 0; i < edges.size(); i++) {
+        e = edges[i];
+        if (graph.getEdgeWeight(edges[i].source, edges[i].dest) == minWeight)
+            break;
+    }
+
+    graph.setEdgeLabel(e.source, e.dest, "MIN");
+    return minWeight;
 }
 
 /**
@@ -53,8 +104,55 @@ int GraphTools::findMinWeight(Graph& graph)
 int GraphTools::findShortestPath(Graph& graph, Vertex start, Vertex end)
 {
     //TODO: YOUR CODE HERE
+    vector<Vertex> vertices = graph.getVertices();
+    vector<Edge> edges = graph.getEdges();
+    queue<Vertex> traverse;
+    unordered_map<Vertex, Vertex> parent;
+    parent[start] = start;
 
-    return -1;
+    for (size_t i = 0; i < vertices.size(); i++)
+        graph.setVertexLabel(vertices[i], "UNEXPLORED");
+
+    for (size_t i = 0; i < edges.size(); i++)
+        graph.setEdgeLabel(edges[i].source, edges[i].dest, "UNEXPLORED");
+
+    Vertex v = start;
+
+    if (graph.getVertexLabel(v) == "UNEXPLORED") {
+        graph.setVertexLabel(v, "VISITED");
+        traverse.push(v);
+
+        while (!traverse.empty()) {
+            v = traverse.front();
+            traverse.pop();
+
+            vector<Vertex> adj = graph.getAdjacent(v);
+            for (size_t i = 0; i < adj.size(); i++) {
+                Vertex n = adj[i];
+
+                if (graph.getVertexLabel(n) == "UNEXPLORED") {
+                    graph.setEdgeLabel(v, n, "DISCOVERY");
+
+                    graph.setVertexLabel(n, "VISITED");
+                    traverse.push(n);
+
+                    parent[n] = v;
+                } else if (graph.getEdgeLabel(v, n) == "UNEXPLORED")
+                    graph.setEdgeLabel(v, n, "CROSS");
+
+            }
+        }
+    }
+
+    v = end;
+    int dist = 0;
+
+    while (v != start) {
+        graph.setEdgeLabel(v, parent[v], "MINPATH");
+        dist++;
+        v = parent[v];
+    }
+    return dist;
 }
 
 /**
@@ -73,5 +171,27 @@ int GraphTools::findShortestPath(Graph& graph, Vertex start, Vertex end)
 void GraphTools::findMST(Graph& graph)
 {
     //TODO: YOUR CODE HERE
-}
+    vector<Vertex> vertices = graph.getVertices();
+    vector<Edge> edges = graph.getEdges();
+    unordered_map<Vertex, int> map;
+    DisjointSets dset;
+    Vertex s, d;
+    Edge e;
 
+    std::sort(edges.begin(), edges.end());
+    for (size_t i = 0; i < vertices.size(); i++)
+        map[vertices[i]] = i;
+
+    dset.addelements(vertices.size());
+
+    for (size_t i = 0; i < edges.size(); i++) {
+        e = edges[i];
+        s = e.source;
+        d = e.dest;
+
+        if (dset.find(map[s]) != dset.find(map[d])) {
+            dset.setunion(map[s], map[d]);
+            graph.setEdgeLabel(s, d, "MST");
+        }
+    }
+}
