@@ -26,6 +26,31 @@
  */
 NimLearner::NimLearner(unsigned startingTokens) : g_(true, true) {
     /* Your code goes here! */
+    for (unsigned i = 0; i <= startingTokens; i++) {
+        g_.insertVertex("p1-" + to_string(i));
+        g_.setVertexLabel("p1-" + to_string(i), "p1-" + to_string(i));
+        g_.insertVertex("p2-" + to_string(i));
+        g_.setVertexLabel("p2-" + to_string(i), "p2-" + to_string(i));
+    }
+
+    for (unsigned i = startingTokens; i > 0; i--) {
+        g_.insertEdge(g_.getVertexByLabel("p1-" + to_string(i)), g_.getVertexByLabel("p2-" + to_string(i - 1)));
+        g_.insertEdge(g_.getVertexByLabel("p2-" + to_string(i)), g_.getVertexByLabel("p1-" + to_string(i - 1)));
+
+        g_.setEdgeWeight(g_.getVertexByLabel("p1-" + to_string(i)), g_.getVertexByLabel("p2-" + to_string(i - 1)), 0);
+        g_.setEdgeWeight(g_.getVertexByLabel("p2-" + to_string(i)), g_.getVertexByLabel("p1-" + to_string(i - 1)), 0);
+
+        if (i == 1)
+            break;
+
+        g_.insertEdge(g_.getVertexByLabel("p1-" + to_string(i)), g_.getVertexByLabel("p2-" + to_string(i - 2)));
+        g_.insertEdge(g_.getVertexByLabel("p2-" + to_string(i)), g_.getVertexByLabel("p1-" + to_string(i - 2)));
+
+        g_.setEdgeWeight(g_.getVertexByLabel("p1-" + to_string(i)), g_.getVertexByLabel("p2-" + to_string(i - 2)), 0);
+        g_.setEdgeWeight(g_.getVertexByLabel("p2-" + to_string(i)), g_.getVertexByLabel("p1-" + to_string(i - 2)), 0);
+    }
+
+    startingVertex_ = g_.getVertexByLabel("p1-" + to_string(startingTokens));
 }
 
 /**
@@ -38,9 +63,22 @@ NimLearner::NimLearner(unsigned startingTokens) : g_(true, true) {
  * @returns A random path through the state space graph.
  */
 std::vector<Edge> NimLearner::playRandomGame() const {
-  vector<Edge> path;
- /* Your code goes here! */
-  return path;
+    vector<Edge> path;
+    /* Your code goes here! */
+    vector < Edge > edges = g_.getEdges();
+    vector < Vertex > vertices = g_.getVertices();
+    int tokens = vertices.size() / 2 - 1;
+    Vertex v = g_.getVertexByLabel("p1-" + to_string(tokens));
+
+    while (v != "p1-0" && v != "p2-0") {
+        vector < Vertex > adj = g_.getAdjacent(v);
+        int x = rand() % adj.size();
+        Edge e = g_.getEdge(v, adj[x]);
+        path.push_back(e);
+        v = adj[x];
+    }
+
+    return path;
 }
 
 /*
@@ -60,7 +98,23 @@ std::vector<Edge> NimLearner::playRandomGame() const {
  * @param path A path through the a game of Nim to learn.
  */
 void NimLearner::updateEdgeWeights(const std::vector<Edge> & path) {
- /* Your code goes here! */
+    /* Your code goes here! */
+    string end = path.back().source;
+    string winner = end.substr(0, 2);
+    int weight;
+
+    for (unsigned i = 0; i < path.size(); i++) {
+        string s = path[i].source;
+        weight = g_.getEdgeWeight(path[i].source, path[i].dest);
+
+        if (s.substr(0, 2) == winner) {
+            weight++;
+            g_.setEdgeWeight(path[i].source, path[i].dest, weight);
+        } else {
+            weight--;
+            g_.setEdgeWeight(path[i].source, path[i].dest, weight);
+        }
+    }
 }
 
 /**
